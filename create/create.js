@@ -25,6 +25,9 @@ form.addEventListener('submit', async (e) => {
     });
     
     form.reset();
+
+    //after clicking SUBMIT redirect to main family page
+    window.location.href = '../families';
 });
 
 window.addEventListener('load', async () => {
