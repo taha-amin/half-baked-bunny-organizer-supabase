@@ -11,8 +11,7 @@ logoutButton.addEventListener('click', () => {
 
 function displayFamilies(families) {
     // fetch families from supabase
-
-
+    
     // clear out the familiesEl
     familiesEl.textContent = '';
 
