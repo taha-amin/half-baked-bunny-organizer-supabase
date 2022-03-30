@@ -36,7 +36,7 @@ export async function createBunny(bunny) {
     const response = await client
         .from('fuzzy_bunnies')
         .insert({
-            bunny,
+            ...bunny,
             user_id: client.auth.session().user.id,
         });
 
