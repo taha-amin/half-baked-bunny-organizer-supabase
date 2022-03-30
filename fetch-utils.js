@@ -13,7 +13,7 @@ export async function getFamilies() {
     const response = await client
         .from('loving_families')
         .select('*, fuzzy_bunnies (*)')
-        
+
         //will only fetch bunnies that were created by the current account
         .match({ 'fuzzy_bunnies.user_id': client.auth.session().user.id });
 
@@ -22,7 +22,12 @@ export async function getFamilies() {
 
 export async function deleteBunny(id) {
     // delete a single bunny using the id argument
-
+    const response = await client
+        .from('fuzzy_bunnies')
+        .delete()
+        .match({ id: id })
+        .single();
+        
     return checkError(response);
 }
 
